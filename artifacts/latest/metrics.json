@@ -1,0 +1,176 @@
+{
+  "config": {
+    "tickers": [
+      "AAPL"
+    ],
+    "focus_ticker": null,
+    "start_date": "2015-01-01",
+    "end_date": "2025-01-01",
+    "forecast_horizon": 10,
+    "target_return_threshold": 0.01,
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "plot_points": 120,
+    "random_state": 42,
+    "output_dir": "artifacts/latest",
+    "save_plot": true
+  },
+  "dataset": {
+    "raw_rows": 2516,
+    "model_rows": 2457,
+    "feature_count": 33,
+    "focus_ticker": "AAPL",
+    "date_range": {
+      "start": "2015-03-16",
+      "end": "2024-12-16"
+    },
+    "train_rows": 1474,
+    "validation_rows": 491,
+    "test_rows": 492,
+    "positive_class_rate": 0.5331705331705332
+  },
+  "candidate_models": {
+    "logistic_regression": {
+      "validation_balanced_accuracy": 0.5,
+      "decision_threshold": 0.35
+    },
+    "random_forest": {
+      "validation_balanced_accuracy": 0.5011056678233653,
+      "decision_threshold": 0.35
+    }
+  },
+  "best_model_name": "random_forest",
+  "decision_threshold": 0.35,
+  "baselines": {
+    "majority_class": {
+      "accuracy": 0.5691056910569106,
+      "balanced_accuracy": 0.5
+    },
+    "previous_day_direction": {
+      "accuracy": 0.5203252032520326,
+      "balanced_accuracy": 0.5121293800539084
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.508130081300813,
+    "balanced_accuracy": 0.5581199460916442,
+    "precision": 0.7638888888888888,
+    "recall": 0.19642857142857142,
+    "f1": 0.3125,
+    "confusion_matrix": [
+      [
+        195,
+        17
+      ],
+      [
+        225,
+        55
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.4642857142857143,
+        "recall": 0.9198113207547169,
+        "f1-score": 0.6170886075949367,
+        "support": 212.0
+      },
+      "1": {
+        "precision": 0.7638888888888888,
+        "recall": 0.19642857142857142,
+        "f1-score": 0.3125,
+        "support": 280.0
+      },
+      "accuracy": 0.508130081300813,
+      "macro avg": {
+        "precision": 0.6140873015873016,
+        "recall": 0.5581199460916442,
+        "f1-score": 0.46479430379746833,
+        "support": 492.0
+      },
+      "weighted avg": {
+        "precision": 0.6347915860110982,
+        "recall": 0.508130081300813,
+        "f1-score": 0.44374549758155807,
+        "support": 492.0
+      }
+    },
+    "roc_auc": 0.5648416442048517
+  },
+  "per_ticker_metrics": {
+    "AAPL": {
+      "accuracy": 0.508130081300813,
+      "balanced_accuracy": 0.5581199460916442,
+      "positive_rate": 0.5691056910569106,
+      "predicted_up_rate": 0.14634146341463414,
+      "mean_future_return": 0.01478159929013204,
+      "mean_future_return_when_predicted_up": 0.036301586437465165
+    }
+  },
+  "signal_quality": {
+    "mean_future_return": 0.01478159929013204,
+    "mean_future_return_when_predicted_up": 0.036301586437465165,
+    "predicted_up_rate": 0.14634146341463414
+  },
+  "top_features": [
+    {
+      "feature": "numeric__MA_50",
+      "importance": 0.09874925002301738
+    },
+    {
+      "feature": "numeric__MA_20",
+      "importance": 0.0879091276050443
+    },
+    {
+      "feature": "numeric__MA_5",
+      "importance": 0.0846526869599186
+    },
+    {
+      "feature": "numeric__MA_10",
+      "importance": 0.07868790520067002
+    },
+    {
+      "feature": "numeric__Volatility_10",
+      "importance": 0.05393451330269
+    },
+    {
+      "feature": "numeric__Volatility_20",
+      "importance": 0.05176520281679686
+    },
+    {
+      "feature": "numeric__MA_10_vs_50",
+      "importance": 0.04249068115405209
+    },
+    {
+      "feature": "numeric__Month",
+      "importance": 0.041475171858476136
+    },
+    {
+      "feature": "numeric__MA_5_vs_20",
+      "importance": 0.04034244025613508
+    },
+    {
+      "feature": "numeric__Close_vs_MA_20",
+      "importance": 0.03526874454617566
+    },
+    {
+      "feature": "numeric__Close_vs_MA_50",
+      "importance": 0.032839492832492975
+    },
+    {
+      "feature": "numeric__RSI_14",
+      "importance": 0.031319869592822756
+    },
+    {
+      "feature": "numeric__Volume",
+      "importance": 0.02849925758421611
+    },
+    {
+      "feature": "numeric__Momentum_10d",
+      "importance": 0.0254863536738918
+    },
+    {
+      "feature": "numeric__Return_10d",
+      "importance": 0.02362473597367118
+    }
+  ]
+}

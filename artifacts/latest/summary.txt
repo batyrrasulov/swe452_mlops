@@ -1,0 +1,6 @@
+Stock Price Trend Prediction Run Summary
+Best model: random_forest
+Validation balanced accuracy: 0.5011
+Test balanced accuracy: 0.5581
+Decision threshold: 0.35
+Tickers: AAPL
